@@ -1,0 +1,39 @@
+div {
+  background-color: #f9f9f9;
+}
+
+li {
+  color: #7c7c7c;
+  font-size: 16px;
+  font-weight: 100;
+  height: 19px;
+  line-height: 1;
+  list-style: none;
+  text-align: left;
+
+  margin-left: 0em;
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+ul {
+  padding-inline-start: 0 !important;
+}
+.temp {
+  font-size: 3em;
+  color: rgb(245, 131, 49);
+}
+.units {
+  vertical-align: top;
+}
+
+.search-form {
+  margin-top: 8px;
+}
+
+.customWidth {
+  max-width: 500px !important;
+}
+#city {
+  color: rgb(245, 131, 49);
+}
