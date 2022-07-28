@@ -43,6 +43,12 @@ function updateCityFromLocation(response) {
   currentCityTemps = response;
   let h1City = document.querySelector("#city");
   h1City.innerHTML = currentCityTemps.data.name;
+  let humidityInput = document.querySelector("#humidity");
+  humidityInput.innerHTML = response.data.main.humidity;
+  let windInput = document.querySelector("#wind");
+  windInput.innerHTML = Math.round(response.data.wind.speed);
+  setWind();
+  setHumidity();
   setCurrentTime();
   setTemperaturesForCity("C");
 }
@@ -82,7 +88,7 @@ function setTemperaturesForCity(unit) {
     sTemperature.innerHTML = roundedFahrenheit;
   }
   let description = document.querySelector("#description");
-  console.log(currentCityTemps);
+
   description.innerHTML = currentCityTemps.data.weather[0].main;
   let icon = document.querySelector("#iconimage");
 
