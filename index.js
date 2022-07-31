@@ -43,16 +43,21 @@ function updateCityFromLocation(response) {
   currentCityTemps = response;
   let h1City = document.querySelector("#city");
   h1City.innerHTML = currentCityTemps.data.name;
-  let humidityInput = document.querySelector("#humidity");
-  humidityInput.innerHTML = response.data.main.humidity;
-  let windInput = document.querySelector("#wind");
-  windInput.innerHTML = Math.round(response.data.wind.speed);
-  setWind();
-  setHumidity();
+
+  setWind(response);
+  setHumidity(response);
   setCurrentTime();
   setTemperaturesForCity("C");
 }
+function setWind(response) {
+  let windInput = document.querySelector("#wind");
+  windInput.innerHTML = Math.round(response.data.wind.speed);
+}
 
+function setHumidity(response) {
+  let humidityInput = document.querySelector("#humidity");
+  humidityInput.innerHTML = response.data.main.humidity;
+}
 function getWeatherForSearch(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiId}&units=metric`;
   axios.get(apiUrl).then(updateCityFromLocation);
